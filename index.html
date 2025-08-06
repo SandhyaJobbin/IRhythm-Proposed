@@ -87,7 +87,11 @@
 
         .steps-container {
             padding: 60px 40px;
+            background: white;
+            border-radius: 60px;
+            margin-bottom: 20px;
         }
+
 
         .steps-grid {
             display: grid;
@@ -115,6 +119,19 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-color: #2c5aa0;
+        }
+
+        .step-card.highlighted {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(44, 90, 160, 0.3);
+            border-color: #2c5aa0;
+            border-width: 4px;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+        }
+
+        .step-card.highlighted::before {
+            height: 8px;
+            background: linear-gradient(90deg, #2c5aa0, #667eea, #764ba2);
         }
 
         .step-card::before {
@@ -154,17 +171,6 @@
             margin-bottom: 20px;
             font-size: 1rem;
         }
-
-        /* BUTTON */
-/* 
-        .hod {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        .hod a{
-            padding:0px 0;
-        } */
 
         .step-details {
             list-style: none;
@@ -225,10 +231,12 @@
         }
 
         .footer {
-            background: #f8faff;
+
             padding: 40px;
             text-align: center;
             border-top: 1px solid #e0e6ed;
+            background: white;
+            border-radius: 60px;
         }
 
         .footer-content {
@@ -288,6 +296,19 @@
             border-radius: 25px;
             font-weight: 600;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .flow-step.active {
+            background: linear-gradient(135deg, #2c5aa0, #1e3c72);
+            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.5);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -318,6 +339,7 @@
             }
         }
 
+
         .all {
             min-height: 100vh;
             max-width: 100%;
@@ -337,121 +359,131 @@
         <img src="DUMMY.png" alt="">
     </div>
     <br>
-    <br>
-    <div class="container">
 
-
-        <div class="steps-container">
-            <div class="process-flow">
-                <div class="flow-step">Wear Monitor</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">Track Symptoms</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">Return Device</div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">Get Results</div>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <div class="icon-container">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Wear Your Zio Monitor</h3>
-                    <p class="step-description">Your healthcare provider will prescribe a Zio monitor to help track your
-                        heart's rhythm continuously.</p>
-                    <ul class="step-details">
-                        <li>Monitor can be applied at your doctor's office</li>
-                        <li>Self-application at home using provided instructions</li>
-                        <li>Comfortable, waterproof patch design</li>
-                        <li>Wear continuously for prescribed duration</li>
-                    </ul>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <div class="icon-container">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Track Your Symptoms</h3>
-                    <p class="step-description">When you experience unusual symptoms, it's important to log them for
-                        accurate diagnosis.</p>
-
-                    <div class="symptoms-highlight">
-                        <strong>Press the patch when you feel:</strong>
-                        <div class="symptoms-list">
-                            <span class="symptom-tag">Dizziness</span>
-                            <span class="symptom-tag">Chest Pain</span>
-                            <span class="symptom-tag">Palpitations</span>
-                        </div>
-                    </div>
-
-                    <ul class="step-details">
-                        <li>Press the top of the Zio patch to log symptoms</li>
-                        <li>Record descriptions in the symptom log booklet</li>
-                        <li>Use the MyZio app for digital tracking</li>
-                        <li>Note time and activity when symptoms occur</li>
-                    </ul>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <div class="icon-container">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M12,11A1,1 0 0,0 11,12A1,1 0 0,0 12,13A1,1 0 0,0 13,12A1,1 0 0,0 12,11M12.5,2C17,2 20.5,5.5 20.5,10C20.5,12.5 19.4,14.7 17.7,16.3L12.5,22L7.3,16.3C5.6,14.7 4.5,12.5 4.5,10C4.5,5.5 8,2 12.5,2Z" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Return Your Monitor</h3>
-                    <p class="step-description">After completing your prescribed wear time, safely return your monitor
-                        for analysis.</p>
-                    <ul class="step-details">
-                        <li>Remove monitor after prescribed wear time</li>
-                        <li>Place monitor and log booklet in original box</li>
-                        <li>Seal the box securely</li>
-                        <li>Mail through any USPS mailbox - prepaid shipping included</li>
-                    </ul>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <div class="icon-container">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M19,19H5V5H19V19M17,12H15.5V17H14V12H12.5L14.75,9.5L17,12M7,9H9.5V7H11V9H12.5L10.25,11.5L7,9Z" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Understand Your Data</h3>
-                    <p class="step-description">iRhythm's expert team analyzes your heart data to provide comprehensive
-                        insights for your healthcare provider.</p>
-                    <ul class="step-details">
-                        <li>Professional analysis of your heart rhythm data</li>
-                        <li>Clear, comprehensive report generated</li>
-                        <li>Detailed insights for your healthcare provider</li>
-                        <li>Enables personalized care plan development</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="steps-container">
+        <div class="process-flow">
+            <div class="flow-step" data-step="1">Wear Monitor</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="2">Track Symptoms</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="3">Return Device</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="4">Get Results</div>
         </div>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <h3>Ready to Take Control of Your Heart Health?</h3>
-                <p>Talk to your healthcare provider about Zio heart monitoring and take the first step toward better
-                    cardiovascular care.</p>
-                <div class="hod">
-                    <a href="" target="_blank" class="cta-button">Know MyZio</a>
-                    <a href="" target="_blank" class="cta-button">Get MyZio App</a>
+        <div class="steps-grid">
+            <div class="step-card" id="step-1">
+                <div class="step-number">1</div>
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z" />
+                    </svg>
                 </div>
+                <h3 class="step-title">Wear Your Zio Monitor</h3>
+                <p class="step-description">Your healthcare provider will prescribe a Zio monitor to help track your
+                    heart's rhythm continuously.</p>
+                <ul class="step-details">
+                    <li>Monitor can be applied at your doctor's office</li>
+                    <li>Self-application at home using provided instructions</li>
+                    <li>Comfortable, waterproof patch design</li>
+                    <li>Wear continuously for prescribed duration</li>
+                </ul>
             </div>
-        </footer>
+
+            <div class="step-card" id="step-2">
+                <div class="step-number">2</div>
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                        <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">Track Your Symptoms</h3>
+                <p class="step-description">When you experience unusual symptoms, it's important to log them for
+                    accurate diagnosis.</p>
+
+                <div class="symptoms-highlight">
+                    <strong>Press the patch when you feel:</strong>
+                    <div class="symptoms-list">
+                        <span class="symptom-tag">Dizziness</span>
+                        <span class="symptom-tag">Chest Pain</span>
+                        <span class="symptom-tag">Palpitations</span>
+                    </div>
+                </div>
+
+                <ul class="step-details">
+                    <li>Press the top of the Zio patch to log symptoms</li>
+                    <li>Record descriptions in the symptom log booklet</li>
+                    <li>Use the MyZio app for digital tracking</li>
+                    <li>Note time and activity when symptoms occur</li>
+                </ul>
+            </div>
+
+            <div class="step-card" id="step-3">
+                <div class="step-number">3</div>
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M12,11A1,1 0 0,0 11,12A1,1 0 0,0 12,13A1,1 0 0,0 13,12A1,1 0 0,0 12,11M12.5,2C17,2 20.5,5.5 20.5,10C20.5,12.5 19.4,14.7 17.7,16.3L12.5,22L7.3,16.3C5.6,14.7 4.5,12.5 4.5,10C4.5,5.5 8,2 12.5,2Z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">Return Your Monitor</h3>
+                <p class="step-description">After completing your prescribed wear time, safely return your monitor
+                    for analysis.</p>
+                <ul class="step-details">
+                    <li>Remove monitor after prescribed wear time</li>
+                    <li>Place monitor and log booklet in original box</li>
+                    <li>Seal the box securely</li>
+                    <li>Mail through any USPS mailbox - prepaid shipping included</li>
+                </ul>
+            </div>
+
+            <div class="step-card" id="step-4">
+                <div class="step-number">4</div>
+                <div class="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M19,19H5V5H19V19M17,12H15.5V17H14V12H12.5L14.75,9.5L17,12M7,9H9.5V7H11V9H12.5L10.25,11.5L7,9Z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">Understand Your Data</h3>
+                <p class="step-description">iRhythm's expert team analyzes your heart data to provide comprehensive
+                    insights for your healthcare provider.</p>
+                <ul class="step-details">
+                    <li>Professional analysis of your heart rhythm data</li>
+                    <li>Clear, comprehensive report generated</li>
+                    <li>Detailed insights for your healthcare provider</li>
+                    <li>Enables personalized care plan development</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Ready to Take Control of Your Heart Health?</h3>
+            <p>Talk to your healthcare provider about Zio heart monitoring and take the first step toward better
+                cardiovascular care.</p>
+            <div class="hod">
+
+                <a href="https://play.google.com/store/apps/details?id=com.irhythm.myzio.android&hl=en_US"> <img
+                        style="height: 90px;width:150px;"
+                        src="https://data.ibtimes.sg/en/full/12247/google-play-store-8-1-73-apk.png" alt=""></a>
+                <a href="https://apps.apple.com/us/app/myzio/id975444227"> <img
+                        style="height: 78px;margin-bottom: 5px; width:190px;"
+                        src="https://wcsmith.com/wp-content/uploads/2023/03/apple-store-badge-png-6.png.webp"
+                        alt=""></a>
+
+
+
+            </div>
+            <div class="know-more">
+                <a href="" target="_blank" class="cta-button">Know MyZio</a>
+            </div>
+        </div>
+    </footer>
+    </div>
+
 
     <script>
         // Add smooth scrolling and interactive elements
@@ -480,6 +512,34 @@
                 observer.observe(card);
             });
 
+            // Add click interaction to flow steps (tabs)
+            const flowSteps = document.querySelectorAll('.flow-step');
+            flowSteps.forEach(step => {
+                step.addEventListener('click', function () {
+                    const stepNumber = this.getAttribute('data-step');
+
+                    // Remove active class from all flow steps
+                    flowSteps.forEach(s => s.classList.remove('active'));
+                    // Add active class to clicked step
+                    this.classList.add('active');
+
+                    // Remove highlighted class from all step cards
+                    stepCards.forEach(card => card.classList.remove('highlighted'));
+
+                    // Add highlighted class to corresponding step card
+                    const targetCard = document.getElementById(`step-${stepNumber}`);
+                    if (targetCard) {
+                        targetCard.classList.add('highlighted');
+
+                        // Smooth scroll to the highlighted card
+                        targetCard.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+
             // Add click interaction to step cards
             stepCards.forEach(card => {
                 card.addEventListener('click', function () {
@@ -503,7 +563,7 @@
             }
         });
     </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96a787ba33ff3acb',t:'MTc1NDQwOTg2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96ad05fc06fb3b27',t:'MTc1NDQ2NzQ2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>
