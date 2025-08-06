@@ -351,6 +351,23 @@
             height: 100%;
             width: 100%;
         }
+
+
+
+
+        /* login-card-image */
+        .login-card-img {
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card-img img {
+            height: 300px;
+            width: 300px;
+        }
     </style>
 </head>
 
@@ -359,21 +376,22 @@
         <img src="DUMMY.png" alt="">
     </div>
     <br>
- <div class="container">
+
+    <div class="container">
 
         <div class="steps-container">
             <div class="process-flow">
-                <div class="flow-step">Wear Monitor</div>
+                <div class="flow-step" data-step="1">Wear Monitor</div>
                 <div class="flow-arrow">→</div>
-                <div class="flow-step">Track Symptoms</div>
+                <div class="flow-step" data-step="2">Track Symptoms</div>
                 <div class="flow-arrow">→</div>
-                <div class="flow-step">Return Device</div>
+                <div class="flow-step" data-step="3">Return Device</div>
                 <div class="flow-arrow">→</div>
-                <div class="flow-step">Get Results</div>
+                <div class="flow-step" data-step="4">Get Results</div>
             </div>
 
             <div class="steps-grid">
-                <div class="step-card">
+                <div class="step-card" id="step-1">
                     <div class="step-number">1</div>
                     <div class="icon-container">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -385,20 +403,23 @@
                     <p class="step-description">Your healthcare provider will prescribe a Zio monitor to help track your
                         heart's rhythm continuously.</p>
                     <ul class="step-details">
-                        <li>Monitor can be applied:
-                            <ul class="in-side">
-                                <li class="inlist">At your doctor's office</li>
-                                <li class="inlist">Self-applied at home using provided instructions</li>
-                            </ul>
-                        </li>
 
-                        <!-- <li>Self-applicati
-                        <li>Comfortable, waterproof patch design</li>
-                        <li>Wear continuously for prescribed duration</li> -->
+                        <p style="color: #666;">
+                                                    Monitor can be applied:
+
+                        </p>
+                        <li class="">At your doctor's office</li>
+                        <li class="">Self-applied at home using provided instructions</li>
+
+
                     </ul>
+                    <div class="login-card-img">
+                        <img style="height: 200PX;margin-top: 30px;border-radius: 10px;" src="1st CARD 1ST WEBSITE.png"
+                            alt="">
+                    </div>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card" id="step-2">
                     <div class="step-number">2</div>
                     <div class="icon-container">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -420,13 +441,14 @@
 
                     <ul class="step-details">
                         <li>Press the top of the Zio patch to log your symptoms. </li>
-                        <li>	You can also record your symptom descriptions in the provided symptom log booklet or use the MyZio app.</li>
+                        <li> You can also record your symptom descriptions in the provided symptom log booklet or use
+                            the MyZio app.</li>
                         <!-- <li>Use the MyZio app for digital tracking</li>
                         <li>Note time and activity when symptoms occur</li> -->
                     </ul>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card" id="step-3">
                     <div class="step-number">3</div>
                     <div class="icon-container">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -442,10 +464,15 @@
                         <li>Seal and mail the box through any USPS mailbox. </li>
                         <!-- <li>Seal the box securely</li>
                         <li>Mail through any USPS mailbox - prepaid shipping included</li>-->
-                    </ul> 
+                    </ul>
+
+                    <div class="login-card-img">
+                        <img style="height: 200PX;margin-top: 2EM;border-radius: 10px;" src="3RD CARD 1ST WEBSITE.png"
+                            alt="">
+                    </div>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card" id="step-4">
                     <div class="step-number">4</div>
                     <div class="icon-container">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -457,20 +484,23 @@
                     <!-- <p class="step-description">iRhythm's expert team analyzes your heart data to provide comprehensive
                         insights for your healthcare provider.</p> -->
                     <ul class="step-details">
-                        <li>iRhythm will review your Zio monitor data and create a clear, comprehensive report based on the analysis.</li>
+                        <li>iRhythm will review your Zio monitor data and create a clear, comprehensive report based on
+                            the analysis.</li>
                         <li>This report can help your healthcare providers to develop a personalized care plan.</li>
                         <!-- <li>Detailed insights for your healthcare provider</li>
                         <li>Enables personalized care plan development</li> -->
                     </ul>
-                    <div class="box-img">
-                        <img src="dashboard.png" alt="">
+
+                    <div class="login-card-img">
+                        <img style="height: 200PX;margin-top: 2EM;border-radius: 10px;" src="dashboard.png" alt="">
                     </div>
 
-                    
                 </div>
             </div>
         </div>
- </div>
+
+    </div>
+    <br>
     <footer class="footer">
         <div class="footer-content">
             <h3>Ready to Take Control of Your Heart Health?</h3>
@@ -490,11 +520,10 @@
 
             </div>
             <div class="know-more">
-                <a href="2ndhomepage.html" target="_blank" class="cta-button">Know MyZio</a>
+                <a href="" target="_blank" class="cta-button">Know MyZio</a>
             </div>
         </div>
     </footer>
-    </div>
 
 
     <script>
